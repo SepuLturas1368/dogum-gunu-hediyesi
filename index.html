@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="shortcut icon" href="fotograflar/favicon.jpg" type="image/x-icon">
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <div id="login-ekrani" style="text-align: center; background-color: #800000; padding: 40px; border-radius: 20px; color: #FAEBD7; border: 3px solid darkred;">
+    <h2>Sadece İkimize Özel...</h2>
+    <br>
+    <input type="text" id="kullanici-adi" placeholder="Kullanıcı adın nedir sevgilim?" 
+           style="padding: 10px; border-radius: 5px; border: none; width: 80%;"><br><br>
+    
+    <input type="password" id="parola-input" placeholder="Parolayı gir..." 
+           style="padding: 10px; border-radius: 5px; border: none; width: 80%;"><br><br>
+    
+    <button onclick="kontrolEt()" style="padding: 10px 20px; background-color: #FAEBD7; color: #800000; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 85%;">Giriş Yap</button>
+    
+    <p id="hata-mesaji" style="color: #FFD700; display: none; margin-top: 15px;">Bilgiler eşleşmiyor... 💔</p>
+</div>
+
+    <script>
+function kontrolEt() {
+    // Inputlardan değerleri alıyoruz
+    const kullaniciAdi = document.getElementById('kullanici-adi').value;
+    const girilenParola = document.getElementById('parola-input').value;
+
+    // Doğru bilgiler (Burayı kendine göre doldur)
+    const dogruKullanici = "Elif Naz Gündoğan"; 
+    const dogruKullanici2 = "Ali Cihan"; // Küçük harfli versiyonunu da ekleyelim, böylece büyük/küçük harf farkı olmaz
+
+    const dogruParola = "guggi";
+
+    // Her iki şartın da doğru olup olmadığını kontrol et
+    if (kullaniciAdi === dogruKullanici && girilenParola === dogruParola || kullaniciAdi === dogruKullanici2 && girilenParola === dogruParola) {
+        // Her şey doğruysa yönlendir
+        window.location.href = "ana.html"; 
+    } else {
+        // Biri bile yanlışsa hatayı göster
+        document.getElementById('hata-mesaji').style.display = "block";
+        
+        // Şık bir dokunuş: Hata alınca inputları temizle
+        document.getElementById('kullanici-adi').value = "";
+        document.getElementById('parola-input').value = "";
+    }
+}
+
+// Opsiyonel: "Enter" tuşuna basınca da giriş yapması için
+document.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        kontrolEt();
+    }
+});
+</script>
+</body>
+</html>
