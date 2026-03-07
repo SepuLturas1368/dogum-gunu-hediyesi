@@ -266,6 +266,19 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #800000;
 }
+#footer-mektup{
+    width: 94%;
+    min-height: 5vh;
+    border-radius: 14px;
+    margin: 20px auto;
+    background-color:#FAEBD7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #800000;
+}
 #sayfabasi{
     color: red;
     font-family: Arial, Helvetica, sans-serif;
